@@ -1,0 +1,241 @@
+:root {
+  --blue-one: rgba(93, 244, 255, 0.81);
+  --red-glow: rgba(211, 87, 91, 0.91);
+  --blue-scanline: rgba(21, 239, 255, 0.2);
+  --black-scanline: rgba(0, 0, 0, 0.9);
+  --black-hover-background: rgba(0, 0, 0, 0.25);
+  --blue-two: #61e4fa;
+  --greenish-blue: rgb(60, 185, 144);
+  --text-shadow: rgb(17, 0, 255);
+}
+
+/* Import font from the web*/
+@font-face{
+  font-family: din;
+  src: url(din1451alt.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: din;
+  
+}
+
+
+html {
+  height: 100%;
+
+}
+
+
+.contents{
+  display: flex;
+}
+
+/*The place where the content of each page is placed on*/
+.page-content{
+  margin-top: 50px;
+  margin-left: 300px;
+  margin-right: 50px;
+  width: 950px;
+  height: 700px;
+  overflow: auto;
+  background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--blue-scanline) 1px,
+      var(--blue-scanline) 3px,
+      var(--blue-scanline) 5px,
+      var(--blue-scanline) 4px,
+      transparent 0.5%
+    ),
+    repeating-linear-gradient(
+      to left,
+      var(--black-scanline) 100%,
+      var(--black-scanline) 100%
+    );
+    border: 3px solid rgb(79, 212, 230);
+    box-shadow: 0px 0px 8px 10px #0ff;
+
+  
+}
+
+/*For the title of each page*/
+.page-title{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 36px;
+  color: var(--greenish-blue);
+}
+
+/*Change the height of the home page to accommodate the contents*/
+#home-page{
+  height: 450px;
+}
+
+/*Change the height of the resume page to accommodate the contents*/
+#resume-page{
+  height: 750px;
+}
+
+#education-page{
+  overflow: auto;
+}
+
+/*For the image and bio on the home page*/
+.professional-image-and-bio{
+    display: flex;
+
+}
+
+/*For the image on the home page*/
+.professional-image-and-bio img{
+  margin-left: 20px;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+
+/*For the bio on the home page*/
+.professional-image-and-bio p{
+    color:white;
+    font-size: 20px;
+    margin-top: 75px;
+}
+
+/*For the resume on the resume page*/
+.resume-pdf{
+  margin-left: 100px;
+  margin-top: 30px;
+  margin-top: 10px;
+}
+
+
+.education-info{
+  color: white;
+  font-size: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: auto;
+}
+
+.education-info h2, ul{
+  text-align: center;
+  list-style-position: inside;
+}
+
+
+/*For the glowing effect in the background*/
+@keyframes glowing {
+  from {box-shadow: 0 0 300px rgba(0,255,255,0.2) inset;}
+  to {box-shadow: 0 0 320px rgba(0,255,255,0.5) inset;}
+}
+
+body {
+  height: 100%;
+  background: #111117;
+  margin: 0;
+  display: block;
+  box-shadow: 0 0 300px rgba(0,255,255,0.2) inset;
+  animation-name: glowing;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+/*For the title on the navigation menu*/
+.navigation-title {
+  font-family: din;
+  color: var(--greenish-blue);
+  text-align: center;
+  font-size: 42px;
+  /*text-shadow: var(--text-shadow) 2px 3px 0px;*/
+  line-height: 1.5;
+  padding: 25px 0px;
+}
+
+/*Everything below here is for the menu and its buttons*/
+.menu {
+  /*display: inline-block;*/
+  margin-left: 7px;
+  width: 350px;
+  height: 100vh;
+  background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--blue-scanline) 1px,
+      var(--blue-scanline) 3px,
+      var(--blue-scanline) 5px,
+      var(--blue-scanline) 4px,
+      transparent 0.5%
+    ),
+    repeating-linear-gradient(
+      to left,
+      var(--black-scanline) 100%,
+      var(--black-scanline) 100%
+    );
+    border: 3px solid rgb(79, 212, 230);
+    box-shadow: 0px 0px 8px 8px #0ff;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0px 25px;
+}
+
+.menu ul li {
+  text-transform: uppercase;
+  cursor: pointer;
+  /* layout */
+  position: relative;
+  padding: 10px;
+  margin: 2px 0px;
+  overflow: hidden;
+  width: 250px;
+  height: 54px;
+  clip-path: polygon(250px 0px, 250px 29px, 222px 57px, 0px 57px, 0px 0px);
+
+  /* font */
+  color: var(--blue-one);
+  font-size: 26px;
+  text-shadow: 0px 0px 3px var(--red-glow);
+
+  /* Border */
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+  /* Animation */
+  transition: color 1s ease-out;
+  transition: border-color 1s ease-out;
+}
+
+.menu ul li::after {
+  /* Layout */
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  right: -17px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+
+  /* Border */
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+
+  /* Animation */
+  transition: color 1s ease-out;
+  transition: border-color 1s ease-out;
+}
+
+.menu ul li:hover::after,
+.menu ul li:hover {
+  color: var(--blue-two);
+  background: var(--black-hover-background);
+  
+  border-color: var(--blue-two);
+
+  transition: color 0.23s linear;
+  transition: border-color 0.23s linear;
+}
