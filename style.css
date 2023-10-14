@@ -160,6 +160,7 @@ body {
   margin-left: 7px;
   width: 350px;
   height: 100vh;
+  position: relative;
   background: repeating-linear-gradient(
       to bottom,
       transparent 0%,
@@ -238,4 +239,18 @@ body {
 
   transition: color 0.23s linear;
   transition: border-color 0.23s linear;
+}
+
+a:visited{
+  text-decoration: none;
+  color: var(--blue-one);
+}
+
+.sources{
+  position: absolute;
+  bottom: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: white;
+  
 }
