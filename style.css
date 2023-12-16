@@ -21,10 +21,31 @@
   
 }
 
+html{
+  
+}
 
-html {
-  height: 100%;
+body {
+  background: #111117;
+  margin: 0;
+  display: block;
+  
+  box-shadow: 0px 0px 300px rgba(0,255,255,0.2) inset;
+  animation-name: glowing;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 
+}
+
+/*For the glowing effect in the background*/
+@keyframes glowing {
+  from {box-shadow: 0 0 300px rgba(0,255,255,0.2) inset;
+        }
+  to {box-shadow: 0 0 320px rgba(0,255,255,0.5) inset;
+      }
+  
 }
 
 
@@ -36,10 +57,11 @@ html {
 .page-content{
   margin-top: 50px;
   margin-left: 300px;
-  margin-right: 50px;
-  width: 950px;
+  /*margin-right: 50px;*/
+  width: 1000px;
   height: 700px;
   overflow: auto;
+  
   background: repeating-linear-gradient(
       to bottom,
       transparent 0%,
@@ -78,8 +100,30 @@ html {
   height: 750px;
 }
 
+
 #education-page{
   overflow: auto;
+}
+
+#skills-page{
+  color: white;
+  height: 650px;
+}
+
+#skills-page h1{
+  margin-left: 10px;
+}
+
+#projects-page{
+  color: white;
+}
+
+#work-page{
+  height: 400px;
+}
+
+#contact-page{
+  height: 375px;
 }
 
 /*For the image and bio on the home page*/
@@ -109,7 +153,7 @@ html {
   margin-top: 10px;
 }
 
-
+/*Below here are the selectors for the education page*/
 .education-info{
   color: white;
   font-size: 24px;
@@ -123,25 +167,122 @@ html {
   list-style-position: inside;
 }
 
+/*****************************************************/
 
-/*For the glowing effect in the background*/
-@keyframes glowing {
-  from {box-shadow: 0 0 300px rgba(0,255,255,0.2) inset;}
-  to {box-shadow: 0 0 320px rgba(0,255,255,0.5) inset;}
+/*Below here are the selectors for the skills page*/
+
+.skill-list{
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
 }
 
-body {
-  height: 100%;
-  background: #111117;
-  margin: 0;
+.skill-list div{
+  display: flex;
+  
+}
+
+.skill-list h2, h3{
+  margin-left: 10px;
+}
+
+
+/**************************************************/
+
+
+/*Below here are the selectors for the projects page*/
+.project-content{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.project-content img, video{
+  border: 2px solid rgb(79, 212, 230);
+}
+
+.rpg-game-images{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rpg-game-images div{
+  width: 45%;
+}
+
+.parser-images{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/*****************************************************/
+
+/*Below here are the selectors for the work experience page*/
+
+.job-description{
+  color: white;
+}
+
+.job-description h1{
+  margin-left: 10px;
+  font-size: 27px;
+}
+
+.job-description ul{
+  text-align: left;
+  width: 73%;
+}
+
+.job-description div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-description img{
+  margin-right: 40px;
+}
+
+/***********************************************************/
+
+
+/*Below here are the selectors for the contact page*/
+.contact-methods{
+  display: flex;
+  
+}
+
+.contact-card{
+  margin-top: 30px;
+  margin-left: 55px;
+  width: 250px;
+  height: 175px;
+
+  background: rgba(6, 214, 221, 0.192);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 3px solid rgb(79, 212, 230);
+
+  color: white;
+ 
+}
+
+.contact-card img{
   display: block;
-  box-shadow: 0 0 300px rgba(0,255,255,0.2) inset;
-  animation-name: glowing;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
+
+
+.contact-card h2, h3{
+  text-align: center;
+}
+/********************************************/
 
 /*For the title on the navigation menu*/
 .navigation-title {
